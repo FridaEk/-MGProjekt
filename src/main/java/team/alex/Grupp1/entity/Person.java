@@ -8,13 +8,14 @@ import javax.persistence.Id;
 public class Person {
 
     /* Entity Attributes */
-    @Id                                   long ssN;
-    @Column(name="FIRST_NAME")            String firstName;
-    @Column(name="LAST_NAME")             String lastName;
-    @Column(name="AGE")                   int age;
-    @Column(name="GENDER")                char gender;
-    @Column(name="CITY_OF_RESIDENCE")     String cityOfResidence;
-    @Column(name="COUNTRY_OF_RESIDENCE")  String countryOfResidence;
+    @Id
+    @Column(name="SSN")       long ssN;
+    @Column(name="firstname") String firstName;
+    @Column(name="lastname")  String lastName;
+    @Column(name="age")       int age;
+    @Column(name="gender")    char gender;
+    @Column(name="city")      String cityOfResidence;
+    @Column(name="country")   String countryOfResidence;
 
     /**
         Person constructor
