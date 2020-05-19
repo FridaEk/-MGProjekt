@@ -6,69 +6,53 @@ import javax.persistence.Id;
 
 @Entity
 public class Person {
-	
-	@Column(name="firstname")
-	String firstName;
 
-	@Column(name="lastname")
-	String lastName;
+    /* Entity Attributes */
+    @Id
+    @Column(name="SSN")       long ssN;
+    @Column(name="firstname") String firstName;
+    @Column(name="lastname")  String lastName;
+    @Column(name="age")       int age;
+    @Column(name="gender")    char gender;
+    @Column(name="city")      String cityOfResidence;
+    @Column(name="country")   String countryOfResidence;
 
-	@Column(name="age")
-	int age;
-	
-	@Column(name="gender")
-	char gender;
-	
-	@Id
-	@Column(name="SSN")
-	long ssN;
+    /**
+        Person constructor
+        @param fname    Firstname
+        @param lname    Lastname
+        @param age      Person age
+        @param gender   Person gender
+        @param ssn      Social security number
+        @param city     city
+        @param country  Country
+    */
+    public Person(String fname, String lname, int age, char gender, long ssn, String city, String country) {
+        setFirstName(fname);
+        setLastName(lname);
+        setAge(age);
+        setGender(gender);
+        setSsN(ssn);
+        setCity(city);
+        setCountry(country);
+    }
 
-	@Column(name="city")
-	String cityOfResidence;
+    /* Getters */
+    public String getFirstName() { return firstName;          }
+    public String getLastName()  { return lastName;           }
+    public int    getAge()       { return age;                }
+    public char   getGender()    { return gender;             }
+    public long   getSsN()       { return ssN;                }
+    public String getCity()      { return cityOfResidence;    }
+    public String getCountry()   { return countryOfResidence; }
 
-	@Column(name="country")
-	String countryOfResidence;
-	
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-	
-	public String getFirstName() { return firstName; }
-	
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-	
-	public String getLastName() { return lastName; }
-	
-	public void setAge(int age) {
-		this.age = age;
-	}
-	
-	public int getAge() { return age; }
-	
-	public void setGender(char gender) {
-		this.gender = gender;
-	}
-	
-	public char getGender() { return gender; }
-	
-	public void setSsN(long ssN) {
-		this.ssN = ssN;
-	}
-	
-	public long getSsN() { return ssN; }
-	
-	public void setCity(String city) {
-		this.cityOfResidence = city;
-	}
-	
-	public String getCity() { return cityOfResidence; }
-	
-	public void setCountry(String country) {
-		this.countryOfResidence = country;
-	}
-	
-	public String getCountry() { return countryOfResidence; }
-	
+    /* Setters */
+    public void setAge(int age)                { this.age = age; }
+    public void setGender(char gender)         { this.gender = gender; }
+    public void setLastName(String lastName)   { this.lastName = lastName; }
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+    public void setSsN(long ssN)               { this.ssN = ssN; }
+    public void setCity(String city)           { this.cityOfResidence = city; }
+    public void setCountry(String country)     { this.countryOfResidence = country; }
+
 }
