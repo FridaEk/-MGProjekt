@@ -17,6 +17,8 @@ public class IndexController {
                     and display on main mage
         */
         ModelAndView mv = new ModelAndView("index");
+        mv.addObject("attrib", "value");
+
         return mv;
     }
 
@@ -25,13 +27,6 @@ public class IndexController {
         // Render error(.html)
         ModelAndView mv = new ModelAndView("error");
         return mv;
-    }
-    
-    @GetMapping("/")
-    public ModelAndView init() {
-    	ModelAndView mv = new ModelAndView("index");
-    	mv.addObject("attrib", "value");
-    	return mv;
     }
 
 }
