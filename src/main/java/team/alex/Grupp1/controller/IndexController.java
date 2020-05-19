@@ -15,5 +15,12 @@ public class IndexController {
         ModelAndView mv = new ModelAndView("error");
         return mv;
     }
+    
+    @GetMapping("/")
+    public ModelAndView init() {
+    	ModelAndView mv = new ModelAndView("index");
+    	mv.addObject("attrib", "value");
+    	return mv;
+    }
 
 }

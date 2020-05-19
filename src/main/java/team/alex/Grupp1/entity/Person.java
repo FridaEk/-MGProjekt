@@ -1,21 +1,33 @@
 package team.alex.Grupp1.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 public class Person {
 	
+	@Column(name="firstname")
 	String firstName;
+
+	@Column(name="lastname")
 	String lastName;
+
+	@Column(name="age")
 	int age;
-	char gender;
-	@Id
-	long ssN;
-	String cityOfResidence;
-	String countryOfResidence;
 	
-	Person() { }
+	@Column(name="gender")
+	char gender;
+	
+	@Id
+	@Column(name="SSN")
+	long ssN;
+
+	@Column(name="city")
+	String cityOfResidence;
+
+	@Column(name="country")
+	String countryOfResidence;
 	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
