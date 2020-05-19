@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import team.alex.Grupp1.entity.Person;
+
 @Controller
 public class PersonController {
 
@@ -20,7 +22,7 @@ public class PersonController {
             personData.getLastName(),
             personData.getAge(),
             personData.getGender(),
-            personData.getSSN(),
+            personData.getSsN(),
             personData.getCity(),
             personData.getCountry()
         );
