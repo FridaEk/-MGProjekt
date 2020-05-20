@@ -43,26 +43,41 @@ public class PersonController {
         return new ResponseObject("[DELETE] OK :: " + id);
     }
 
-
     @GetMapping("/fetchAll")
     public ResponseObject getAll() {
 
         // TODO: Fetch all entries from database
         return new ResponseObject("get all - OK");
     }
-
-    @GetMapping("/getPersonById/{id}")
-    public ResponseObject getPersonById(@PathVariable int id) {
-
-        // TODO: Fetch from database
-        return new ResponseObject("getPersonByID - OK :: " + id);
-    }
-
+  
     @GetMapping("/getPersonBySSN/{ssn}")
     public ResponseObject getPersonBySSN(@PathVariable int ssn) {
 
         // TODO: Fetch from database
         return new ResponseObject("getPersonBySSN - OK :: " + ssn);
+    }
+    
+    @PostMapping("/changePerson")
+    public ResponseObject changePerson(@RequestBody Person personData) {
+    	
+    	Person oldPerson = personRepo.findByssN(personData.getSsN());
+
+        Person newPerson = new Person(
+            personData.getFirstName(),
+            personData.getLastName(),
+            personData.getAge(),
+            personData.getGender(),
+            personData.getSsN(),
+            personData.getCity(),
+            personData.getCountry()
+        );
+
+        oldPerson = newPerson;
+        
+        personRepo.save(oldPerson);
+        // TODO : Insert into database
+
+        return new ResponseObject("[POST] OK");
     }
 
 }
