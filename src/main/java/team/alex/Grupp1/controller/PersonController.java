@@ -37,7 +37,7 @@ public class PersonController {
         );
       
         personRepo.save(person);
-        return new ResponseObject("[CreatePerson] OK");
+        return new ResponseObject("Created: " + person.toString());
     }
 
     @DeleteMapping("/deletePerson/{ssn}")
@@ -48,8 +48,9 @@ public class PersonController {
     		return new ResponseObject("ERROR: Entity with SSN '"+ssn+"' doesn't exist.");
 		}
     	
+    	Person deletedPerson = personRepo.findById(ssn);
     	personRepo.deleteById(ssn);
-    	return new ResponseObject("[DeletePerson] OK :: " + ssn);
+    	return new ResponseObject("Deleted: " + deletedPerson.toString());
     }
 
 
@@ -57,20 +58,31 @@ public class PersonController {
     * Retrieves all existing entities(Person) and returns them as an ArrayList<Person>
     */
     @GetMapping("/fetchAll")
-    public ArrayList<Person> getAll() {
-        return personRepo.findAll();
+    public String getAll() {
+    	ArrayList<Person> allRows = new ArrayList<>();
+    	
+    	allRows.addAll(personRepo.findAll());
+    	
+    	StringBuilder fetchedData = new StringBuilder();
+    	
+    	for (Person p : allRows) {
+    		fetchedData.append(p.toString());
+    		fetchedData.append("\n");
+    	}
+    	
+        return fetchedData.toString();
     }
 
     /*
     * Retrieves a Person entity by given SSN id
     */
     @GetMapping("/getPersonBySSN/{ssn}")
-    public Person getPersonBySSN(@PathVariable long ssn) {
-        return personRepo.findById(ssn);
+    public String getPersonBySSN(@PathVariable long ssn) {
+        return personRepo.findById(ssn).toString();
     }
 
     @PostMapping("/changePerson")
-    public ResponseObject changePerson(@RequestBody Person personData) {
+    public String changePerson(@RequestBody Person personData) {
 
     	Person oldPerson = personRepo.findById(personData.getSsN());
 
@@ -83,12 +95,12 @@ public class PersonController {
             personData.getCity(),
             personData.getCountry()
         );
-
+        
         oldPerson = newPerson;
 
         personRepo.save(oldPerson);
 
-        return new ResponseObject("[POST] OK");
+        return "Changed:\n" + newPerson.toString();
     }
 
 }
