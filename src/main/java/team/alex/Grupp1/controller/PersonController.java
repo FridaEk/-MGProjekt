@@ -32,18 +32,17 @@ public class PersonController {
             personData.getCountry()
         );
 
-        // TODO : Insert into database
 
         return new ResponseObject("[POST] OK");
     }
 
     @DeleteMapping("/deletePerson/{id}")
     @ResponseBody
-    public ResponseObject deletePerson(@PathVariable int id) {
+    public ResponseObject deletePerson(@PathVariable Long ssn) {
+    	
+    	personRepo.deleteById(ssn);
 
-    	// TODO: Delete from db
-
-        return new ResponseObject("[DELETE] OK :: " + id);
+        return new ResponseObject("[DELETE] OK :: " + ssn);
     }
 
 
@@ -55,13 +54,6 @@ public class PersonController {
         return new ResponseObject("get all - OK");
     }
 
-    @GetMapping("/getPersonById/{id}")
-    @ResponseBody
-    public ResponseObject getPersonById(@PathVariable int id) {
-
-        // TODO: Fetch from database
-        return new ResponseObject("getPersonByID - OK :: " + id);
-    }
 
     @GetMapping("/getPersonBySSN/{ssn}")
     @ResponseBody
