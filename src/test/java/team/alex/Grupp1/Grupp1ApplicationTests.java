@@ -21,38 +21,39 @@ class Grupp1ApplicationTests {
 	private PersonRepository personRepo;
 
 	private static long ssn;
-  
-  @BeforeAll
+
+	@BeforeAll
 	public static void beforeAllTests() {
 		ssn = 1L;
 	}
-    @Test
+
+	@Test
 	void testGetRowsAfterDelete() {
 
 		// Create and store test entity
 
-		Person person = new Person("Pepe","Frog",20,'m',ssn,"City","Country");
-        personRepo.save(person);
+		Person person = new Person("Pepe", "Frog", 20, 'm', ssn, "City", "Country");
+		personRepo.save(person);
 
-        person = new Person("Pepe","Frog",20,'m',ssn+1,"City","Country");
-        personRepo.save(person);
+		person = new Person("Pepe", "Frog", 20, 'm', ssn + 1, "City", "Country");
+		personRepo.save(person);
 
-        person = new Person("Pepe","Frog",20,'m',ssn+2,"City","Country");
-        personRepo.save(person);
+		person = new Person("Pepe", "Frog", 20, 'm', ssn + 2, "City", "Country");
+		personRepo.save(person);
 
-        person = new Person("Pepe","Frog",20,'m',ssn+3,"City","Country");
-        personRepo.save(person);
+		person = new Person("Pepe", "Frog", 20, 'm', ssn + 3, "City", "Country");
+		personRepo.save(person);
 
-        // delete last person
-        personRepo.delete(person);
+		// delete last person
+		personRepo.delete(person);
 
-        assertEquals(3, personRepo.count());
-	
+		assertEquals(3, personRepo.count());
+	}
+
 	@Test
 	@DisplayName("Test4")
 	public void testIfRowExists() {
 		assertFalse(personRepo.existsById(ssn));
 	}
 
-	
 }
