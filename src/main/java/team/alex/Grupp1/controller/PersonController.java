@@ -15,7 +15,7 @@ import team.alex.Grupp1.repositories.PersonRepository;
 
 @RestController
 public class PersonController {
-	
+
 	@Autowired
 	PersonRepository personRepo;
 
@@ -32,8 +32,7 @@ public class PersonController {
             personData.getCountry()
         );
 
-        // TODO : Insert into database
-
+        personRepo.save(person);
         return new ResponseObject("[POST] OK");
     }
 
@@ -60,6 +59,29 @@ public class PersonController {
     @GetMapping("/getPersonBySSN/{ssn}")
     public Person getPersonBySSN(@PathVariable long ssn) {
         return personRepo.findById(ssn);
+    }
+
+    @PostMapping("/changePerson")
+    public ResponseObject changePerson(@RequestBody Person personData) {
+
+    	Person oldPerson = personRepo.findById(personData.getSsN());
+
+        Person newPerson = new Person(
+            personData.getFirstName(),
+            personData.getLastName(),
+            personData.getAge(),
+            personData.getGender(),
+            personData.getSsN(),
+            personData.getCity(),
+            personData.getCountry()
+        );
+
+        oldPerson = newPerson;
+
+        personRepo.save(oldPerson);
+        // TODO : Insert into database
+
+        return new ResponseObject("[POST] OK");
     }
 
 }

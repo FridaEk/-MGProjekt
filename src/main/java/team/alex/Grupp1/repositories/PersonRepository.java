@@ -7,14 +7,13 @@ import org.springframework.data.repository.CrudRepository;
 import team.alex.Grupp1.entity.Person;
 
 public interface PersonRepository extends CrudRepository<Person, Long> {
-	
-	// Overrides default findAll to return 
+
+	// Overrides default findAll to return
 	// an ArrayList of Person entities
 	ArrayList<Person> findAll();
-	
-	// Overrides default findById to return 
+
+	// Overrides default findById to return
 	// a Person entity instead of Optional<Object>
 	Person findById(long ssn);
-	
-}
 
+}
