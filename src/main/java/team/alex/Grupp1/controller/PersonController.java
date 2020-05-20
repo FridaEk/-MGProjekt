@@ -30,8 +30,7 @@ public class PersonController {
             personData.getCountry()
         );
 
-        // TODO : Insert into database
-
+        personRepo.save(person);
         return new ResponseObject("[POST] OK");
     }
 
