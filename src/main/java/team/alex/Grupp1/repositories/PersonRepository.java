@@ -4,5 +4,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import team.alex.Grupp1.entity.Person;
 
-public interface PersonRepository extends CrudRepository<Person, String> {}
+public interface PersonRepository extends CrudRepository<Person, Long> {
+	Person findByssN(long ssN);
+}
 
