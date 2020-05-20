@@ -1,25 +1,23 @@
 package team.alex.Grupp1.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import team.alex.Grupp1.entity.Person;
 import team.alex.Grupp1.repositories.PersonRepository;
 
-@Controller
+@RestController
 public class PersonController {
 	
 	@Autowired
 	PersonRepository personRepo;
 
     @PostMapping("/createPerson")
-    @ResponseBody
     public ResponseObject createPerson(@RequestBody Person personData) {
 
         Person person = new Person(
@@ -38,7 +36,6 @@ public class PersonController {
     }
 
     @DeleteMapping("/deletePerson/{id}")
-    @ResponseBody
     public ResponseObject deletePerson(@PathVariable int id) {
 
     	// TODO: Delete from db
@@ -48,7 +45,6 @@ public class PersonController {
 
 
     @GetMapping("/fetchAll")
-    @ResponseBody
     public ResponseObject getAll() {
 
         // TODO: Fetch all entries from database
@@ -56,7 +52,6 @@ public class PersonController {
     }
 
     @GetMapping("/getPersonById/{id}")
-    @ResponseBody
     public ResponseObject getPersonById(@PathVariable int id) {
 
         // TODO: Fetch from database
@@ -64,7 +59,6 @@ public class PersonController {
     }
 
     @GetMapping("/getPersonBySSN/{ssn}")
-    @ResponseBody
     public ResponseObject getPersonBySSN(@PathVariable int ssn) {
 
         // TODO: Fetch from database
