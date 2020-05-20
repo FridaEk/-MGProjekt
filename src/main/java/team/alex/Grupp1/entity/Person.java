@@ -17,6 +17,9 @@ public class Person {
     @Column(name="city")      String cityOfResidence;
     @Column(name="country")   String countryOfResidence;
 
+    /* Default constructor */
+    public Person() {}
+    
     /**
         Person constructor
         @param fname    Firstname
