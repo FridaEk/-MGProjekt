@@ -1,5 +1,7 @@
 package team.alex.Grupp1.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +15,7 @@ import team.alex.Grupp1.repositories.PersonRepository;
 
 @RestController
 public class PersonController {
-	
+
 	@Autowired
 	PersonRepository personRepo;
 
@@ -40,24 +42,27 @@ public class PersonController {
         return new ResponseObject("[DELETE] OK :: " + ssn);
     }
 
+
+    /*
+    * Retrieves all existing entities(Person) and returns them as an ArrayList<Person>
+    */
     @GetMapping("/fetchAll")
-    public ResponseObject getAll() {
-
-        // TODO: Fetch all entries from database
-        return new ResponseObject("get all - OK");
+    public ArrayList<Person> getAll() {
+        return personRepo.findAll();
     }
-  
+
+    /*
+    * Retrieves a Person entity by given SSN id
+    */
     @GetMapping("/getPersonBySSN/{ssn}")
-    public ResponseObject getPersonBySSN(@PathVariable int ssn) {
-
-        // TODO: Fetch from database
-        return new ResponseObject("getPersonBySSN - OK :: " + ssn);
+    public Person getPersonBySSN(@PathVariable long ssn) {
+        return personRepo.findById(ssn);
     }
-    
+
     @PostMapping("/changePerson")
     public ResponseObject changePerson(@RequestBody Person personData) {
-    	
-    	Person oldPerson = personRepo.findByssN(personData.getSsN());
+
+    	Person oldPerson = personRepo.findById(personData.getSsN());
 
         Person newPerson = new Person(
             personData.getFirstName(),
@@ -70,7 +75,7 @@ public class PersonController {
         );
 
         oldPerson = newPerson;
-        
+
         personRepo.save(oldPerson);
 
         return new ResponseObject("[POST] OK");
