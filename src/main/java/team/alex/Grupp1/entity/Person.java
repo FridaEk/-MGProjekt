@@ -57,5 +57,10 @@ public class Person {
     public void setSsN(long ssN)               { this.ssN = ssN; }
     public void setCity(String city)           { this.cityOfResidence = city; }
     public void setCountry(String country)     { this.countryOfResidence = country; }
+    
+    @Override
+    public String toString() {
+    	return String.format("%d | %s | %s | %d | %s | %s | %s", getSsN(), getLastName(), getFirstName(), getAge(), getGender(), getCity(), getCountry());
+    }
 
 }
