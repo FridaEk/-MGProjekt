@@ -31,17 +31,15 @@ public class PersonController {
             personData.getCity(),
             personData.getCountry()
         );
-
+      
         personRepo.save(person);
         return new ResponseObject("[POST] OK");
     }
 
     @DeleteMapping("/deletePerson/{id}")
-    public ResponseObject deletePerson(@PathVariable int id) {
-
-    	// TODO: Delete from db
-
-        return new ResponseObject("[DELETE] OK :: " + id);
+    public ResponseObject deletePerson(@PathVariable Long ssn) {
+    	  personRepo.deleteById(ssn);
+        return new ResponseObject("[DELETE] OK :: " + ssn);
     }
 
 
@@ -79,7 +77,6 @@ public class PersonController {
         oldPerson = newPerson;
 
         personRepo.save(oldPerson);
-        // TODO : Insert into database
 
         return new ResponseObject("[POST] OK");
     }

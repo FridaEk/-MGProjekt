@@ -15,5 +15,4 @@ public interface PersonRepository extends CrudRepository<Person, Long> {
 	// Overrides default findById to return
 	// a Person entity instead of Optional<Object>
 	Person findById(long ssn);
-
 }

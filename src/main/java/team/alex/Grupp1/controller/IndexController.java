@@ -18,8 +18,10 @@ public class IndexController {
                     and display on main mage
         */
         ModelAndView mv = new ModelAndView("index");
-        mv.addObject("attrib", "value");
-
+        mv.addObject("alex", "Alex info");
+        mv.addObject("olle", "Olle info");
+        mv.addObject("frida", "Frida info");
+        mv.addObject("nedim", "Nedim info");
         return mv;
     }
 
