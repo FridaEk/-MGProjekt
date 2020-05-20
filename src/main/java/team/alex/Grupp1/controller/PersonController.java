@@ -21,6 +21,10 @@ public class PersonController {
 
     @PostMapping("/createPerson")
     public ResponseObject createPerson(@RequestBody Person personData) {
+    	
+    	// make sure an existing person is not overriden
+    	if(personRepo.existsById(personData.getSsN()) == true)
+    		return new ResponseObject("ERROR: User with SSN '"+personData.getSsN()+"' already exists.");
 
         Person person = new Person(
             personData.getFirstName(),
@@ -33,13 +37,19 @@ public class PersonController {
         );
       
         personRepo.save(person);
-        return new ResponseObject("[POST] OK");
+        return new ResponseObject("[CreatePerson] OK");
     }
 
-    @DeleteMapping("/deletePerson/{id}")
-    public ResponseObject deletePerson(@PathVariable Long ssn) {
-    	  personRepo.deleteById(ssn);
-        return new ResponseObject("[DELETE] OK :: " + ssn);
+    @DeleteMapping("/deletePerson/{ssn}")
+    public ResponseObject deletePerson(@PathVariable long ssn) {
+    	
+    	// validate that entity with given SSN exists
+    	if(personRepo.existsById(ssn) == false) {
+    		return new ResponseObject("ERROR: Entity with SSN '"+ssn+"' doesn't exist.");
+		}
+    	
+    	personRepo.deleteById(ssn);
+    	return new ResponseObject("[DeletePerson] OK :: " + ssn);
     }
 
 
