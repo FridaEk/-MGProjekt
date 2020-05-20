@@ -46,26 +46,20 @@ public class PersonController {
     }
 
 
+    /*
+    * Retrieves all existing entities(Person) and returns them as an ArrayList<Person>
+    */
     @GetMapping("/fetchAll")
-    public ResponseObject getAll() {
-
-        // TODO: Fetch all entries from database
-        return new ResponseObject("get all - OK");
+    public ArrayList<Person> getAll() {
+        return personRepo.findAll();
     }
 
-    @GetMapping("/getPersonById/{id}")
-    @ResponseBody
-    public ResponseObject getPersonById(@PathVariable int id) {
-
-        // TODO: Fetch from database
-        return new ResponseObject("getPersonByID - OK :: " + id);
-    }
-
+    /*
+    * Retrieves a Person entity by given SSN id
+    */
     @GetMapping("/getPersonBySSN/{ssn}")
-    public ResponseObject getPersonBySSN(@PathVariable int ssn) {
-
-        // TODO: Fetch from database
-        return new ResponseObject("getPersonBySSN - OK :: " + ssn);
+    public Person getPersonBySSN(@PathVariable long ssn) {
+        return personRepo.findById(ssn);
     }
 
 }
