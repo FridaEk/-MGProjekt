@@ -55,5 +55,14 @@ class Grupp1ApplicationTests {
 	public void testIfRowExists() {
 		assertFalse(personRepo.existsById(ssn));
 	}
-
+	
+	@Test
+	public void testGetExpectedRows() {
+		
+		Person person = new Person("Jonas", "Sjöstedt", 41, 'm', ssn + 4, "Malmö", "Sweden");
+		personRepo.save(person);
+		
+		assertEquals(4, personRepo.count());
+		
+	}
 }
