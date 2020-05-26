@@ -23,17 +23,15 @@ class Grupp1ApplicationTests {
 
 	private static long ssn;
 
-	@BeforeAll
-	public static void beforeAllTests() {
-		ssn = 1L;
-	}
+	private Person person;
 
-	@Test
-	void testGetRowsAfterDelete() {
+	@BeforeAll
+	public void beforeAllTests() {
+		ssn = 1L;
 
 		// Create and store test entity
 
-		Person person = new Person("Pepe", "Frog", 20, 'm', ssn, "City", "Country");
+		person = new Person("Pepe", "Frog", 20, 'm', ssn, "City", "Country");
 		personRepo.save(person);
 
 		person = new Person("Pepe", "Frog", 20, 'm', ssn + 1, "City", "Country");
@@ -44,7 +42,15 @@ class Grupp1ApplicationTests {
 
 		person = new Person("Pepe", "Frog", 20, 'm', ssn + 3, "City", "Country");
 		personRepo.save(person);
+		
 
+		person = new Person("Jonas", "Sjöstedt", 41, 'm', ssn + 4, "Malmö", "Sweden");
+		personRepo.save(person);
+
+	}
+
+	@Test
+	void testGetRowsAfterDelete() {
 		// delete last person
 		personRepo.delete(person);
 
@@ -53,23 +59,19 @@ class Grupp1ApplicationTests {
 
 	@Test
 	@DisplayName("Test1")
-    public void testNumberOfRows() {
-        assertTrue(personRepo.findAll().size() == 3);
-    }
-	
+	public void testNumberOfRows() {
+		assertTrue(personRepo.findAll().size() == 3);
+	}
+
 	@Test
 	@DisplayName("Test4")
 	public void testIfRowExists() {
 		assertFalse(personRepo.existsById(ssn));
 	}
-	
+
 	@Test
 	public void testGetExpectedRows() {
-		
-		Person person = new Person("Jonas", "Sjöstedt", 41, 'm', ssn + 4, "Malmö", "Sweden");
-		personRepo.save(person);
-		
 		assertEquals(4, personRepo.count());
-		
+
 	}
 }
