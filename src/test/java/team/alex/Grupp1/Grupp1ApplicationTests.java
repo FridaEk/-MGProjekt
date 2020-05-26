@@ -3,6 +3,7 @@ package team.alex.Grupp1;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -50,6 +51,12 @@ class Grupp1ApplicationTests {
 		assertEquals(3, personRepo.count());
 	}
 
+	@Test
+	@DisplayName("Test1")
+    public void testNumberOfRows() {
+        assertTrue(personRepo.findAll().size() == 3);
+    }
+	
 	@Test
 	@DisplayName("Test4")
 	public void testIfRowExists() {
