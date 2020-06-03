@@ -15,29 +15,90 @@
 		    <table>
 		    	<tr>
 			   		<td>
-			   			<p><b>Alex Reuchadfwe</b></p>
-			   			<p><i>The one w/ a girlfriend</i></p>
+			   			<p><b>Alex Raunert</b></p>
 			   		</td>
 			   		<td>
 			   			<p><b>Frida Ek</b></p>
-			   			<p><i>The Worke</i>r</p>
+			   			<p><i>The Worker</i></p>
 			   		</td>
 		    	</tr>
 		    	<tr>
 			   		<td>
 			   			<p><b>Nedim Kanat</b></p>
-			   			<p><i>Wubba lubba dub dub</i></p>
 			   		</td>
 			   		<td>
 			   			<p><b>Olle Johansson</b></p>
-			   			<p><i>The timekeeper</i></p>
 			   		</td>
 		    	</tr>
 	    	</table>
 	    	
 	    	<p>Vår github hittar ni <a href="https://github.com/ollejj/-MGProjekt">här</a></p>
-	    	<p>Vårt arbete finns även på <a href="http://obscure-shelf-76013.herokuapp.com/">heroku</a></p>
+	    	<p>Vårt arbete finns även på <a href="http://gruppett.herokuapp.com/">heroku</a></p>
 	    	
+	    	<p><b>REST-Kommandon:</b></p>
+	    	
+	    	<div id="cmds">
+		    	<table>
+			    	<tr>
+				   		<td>
+				   			<p><b>/createPerson</b></p>
+				   		</td>
+				   		<td>
+				   			<p>Tar emot en body:</p>
+				   			<p>{<br>
+							    "firstName": string,<br>
+							    "lastName": string,<br>
+							    "age": int,<br>
+							    "gender": char,<br>
+							    "city": string,<br>
+							    "country": string,<br>
+							    "ssN": long<br>
+							}</p>
+				   		</td>
+			    	</tr>
+			    	<tr>
+				   		<td>
+				   			<p><b>/deletePerson/{ssn}</b></p>
+				   		</td>
+				   		<td>
+				   			<p>Ersätt {ssn} med ssn-värdet på den personen du vill ta bort</p>
+				   		</td>
+			    	</tr>
+			    	<tr>
+				   		<td>
+				   			<p><b>/fetchAll</b></p>
+				   		</td>
+				   		<td>
+				   			<p>Hämtar alla rader från Databas</p>
+				   		</td>
+			    	</tr>
+			    	<tr>
+				   		<td>
+				   			<p><b>/getPersonBySSN/{ssn}</b></p>
+				   		</td>
+				   		<td>
+				   			<p>Ersätt {ssn} med ssn-värdet på den personen du vill visa</p>
+				   		</td>
+			    	</tr>
+			    	<tr>
+				   		<td>
+				   			<p><b>/changePerson</b></p>
+				   		</td>
+				   		<td>
+				   			<p>Tar emot en body:</p>
+				   			<p>{<br>
+							    "firstName": string,<br>
+							    "lastName": string,<br>
+							    "age": int,<br>
+							    "gender": char,<br>
+							    "city": string,<br>
+							    "country": string,<br>
+							    "ssN": long<br>
+							}</p>
+				   		</td>
+			    	</tr>
+		    	</table>
+	    	</div>
     	</div>
     </body>
 </html>
