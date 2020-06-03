@@ -83,7 +83,7 @@ public class PersonController {
     	
     	for (Person p : allRows) {
     		fetchedData.append(p.toString());
-    		fetchedData.append("\n");
+    		fetchedData.append("\n<br>");
     	}
     	
         return fetchedData.toString();
