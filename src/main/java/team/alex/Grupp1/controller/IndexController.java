@@ -1,6 +1,8 @@
 package team.alex.Grupp1.controller;
 
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,10 +20,9 @@ public class IndexController {
 	@Autowired
 	PersonRepository personRepo;
 	
-    @GetMapping("/")
-    public ModelAndView index() {
-
-    	Person person1 = new Person("Olle", "Johansson", 23, 'm', 101010, "Malmö", "Sverige");
+	@PostConstruct
+	public void init() {
+		Person person1 = new Person("Olle", "Johansson", 23, 'm', 101010, "Malmö", "Sverige");
     	Person person2 = new Person("Frida", "Ek", 32, 'f', 101011, "Malmö", "Sverige");
     	Person person3 = new Person("Alexander", "Raunert", 28, 'm', 101012, "Malmö", "Sverige");
     	Person person4 = new Person("Nedim", "Kanat", 20, 'm', 101013, "Malmö", "Sverige");
@@ -30,7 +31,11 @@ public class IndexController {
     	personRepo.save(person2);
     	personRepo.save(person3);
     	personRepo.save(person4);
-    	
+	}
+	
+    @GetMapping("/")
+    public ModelAndView index() {
+	
         ModelAndView mv = new ModelAndView("index");
         return mv;
     }
