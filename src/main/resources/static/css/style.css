@@ -4,26 +4,84 @@ body {
     font-family: arial;
 }
 
-table {
-	width: 20vw;
+header {
+	background-color: #DCDCDC;
+}
+
+.flex-container {
+	
+	display: flex;
+	padding-left: 80px;
+	padding-top: 10px;
+}
+
+.flex-container > div {
+	 background-color: #ADD8E6;
+  	margin: 10px;
+ 	 padding: 20px;
+}
+
+div.card {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+.cmd-size{
+	width: 25vw;
+}
+
+.cmd-length{
+	background-color: #fafafa;
+	padding-left:300px;
+}
+
+.commands {
+	float:left;
+	width: 25vw;
 	text-align: center;
 	clear: both;
 }
 
-tr:nth-child(even) {
-	background-color: #eeeeee;
+.image-info {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
 }
 
-tr:nth-child(odd) {
-	background-color: #fafafa;
+
+#image-git{
+	 width: 45px; 
+	 height: 45px;
+	 border-radius: 50%;
+	 
+}
+#image-heroku{
+	 width: 45px; 
+	 height: 45px;
+	 padding-rigth: 10px;
 }
 
 #container {
+	margin: top;
 	width: 30vw;
+	padding-left: 700px;
+	padding-top: 50px;
 }
 
-#cmds > table {
-	width: 20vw;
-	text-align: left;
-	clear: both;
+
+#links {
+	padding-top:50px;
+	padding-left:450px;
+	padding-right: 20px;
+	padding-bottom: 30px;
+	text-align: right;
+}
+
+
+#title {
+	font-size:150%;
+	font-family:"helvetica", sans-serif;
+	padding-top:50px;
+	padding-left:150px;
 }

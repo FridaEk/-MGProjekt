@@ -1,119 +1,160 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Page title Here</title>
-        <link th:href="@{css/style.css}" rel="stylesheet" />
-    </head>
-    <body>
-	    <div id="container">
-	    	<p>
-	    	   Vi har valt att arbeta både under skoltid i grupp och självständigt övrig tid. <br>
-			   Arbetet har flytit på bra, inga konflikter har uppstått och alla har gjort det som <br>
-			   har förväntats. <br>
-				
-			   Vi har använt oss av Git, vilket var första gången för två av oss i gruppen. Detta var<br>
-			   lite utmanande i början men vi kom snabbt in i det. Överlag har projektet inte varit<br>
-     		   speciellt utmanande, det skulle kunna ha varit mycket mer inveklat. En del av<br>
-		 	   att arbeta i grupp är att delegera arbetet utifrån erfarenhet och kunskapsnivå, vilket<br>
-			   fungerat utmärkt i vår grupp men tyvärr saknas komplexitet som skulle kunna finnas där t.ex. <br>
-			   Spring Security eller Postgres (eller en annan ordentlig databas).<br>
-			   Vi har arbetat agilt och delat upp projektet i olika sprintar och till detta har<br>
-			   vi haft Trello som hjälp.<br>
-			   <br>
-			   I trellon har vi lagt ut 4 sprintar. Grön är sprint 1, Gul är sprint 2, Orange är sprint 3 och Röd är sprint 4.
-			</p>
-	    	
-		    <p><b>Vårt Team:</b></p>
-	    
-		    <table>
-		    	<tr>
-			   		<td>
-			   			<p><b>Alex Raunert</b></p>
-			   		</td>
-			   		<td>
-			   			<p><b>Frida Ek</b></p>
-			   			<p><i>The Worker</i></p>
-			   		</td>
-		    	</tr>
-		    	<tr>
-			   		<td>
-			   			<p><b>Nedim Kanat</b></p>
-			   		</td>
-			   		<td>
-			   			<p><b>Olle Johansson</b></p>
-			   		</td>
-		    	</tr>
-	    	</table>
-	    	
-	    	<p>Vår github hittar ni <a href="https://github.com/ollejj/-MGProjekt">här</a></p>
-	    	<p>Vårt arbete finns även på <a href="http://gruppett.herokuapp.com/">heroku</a></p>
-	    	
-	    	<p><b>REST-Kommandon:</b></p>
-	    	
-	    	<div id="cmds">
-		    	<table>
-			    	<tr>
-				   		<td>
-				   			<p><b>/createPerson</b></p>
-				   		</td>
-				   		<td>
-				   			<p>Tar emot en body:</p>
-				   			<p>{<br>
-							    "firstName": string,<br>
-							    "lastName": string,<br>
-							    "age": int,<br>
-							    "gender": char,<br>
-							    "city": string,<br>
-							    "country": string,<br>
-							    "ssN": long<br>
-							}</p>
-				   		</td>
-			    	</tr>
-			    	<tr>
-				   		<td>
-				   			<p><b>/deletePerson/{ssn}</b></p>
-				   		</td>
-				   		<td>
-				   			<p>Ersätt {ssn} med ssn-värdet på den personen du vill ta bort</p>
-				   		</td>
-			    	</tr>
-			    	<tr>
-				   		<td>
-				   			<p><b>/fetchAll</b></p>
-				   		</td>
-				   		<td>
-				   			<p>Hämtar alla rader från Databas</p>
-				   		</td>
-			    	</tr>
-			    	<tr>
-				   		<td>
-				   			<p><b>/getPersonBySSN/{ssn}</b></p>
-				   		</td>
-				   		<td>
-				   			<p>Ersätt {ssn} med ssn-värdet på den personen du vill visa</p>
-				   		</td>
-			    	</tr>
-			    	<tr>
-				   		<td>
-				   			<p><b>/changePerson</b></p>
-				   		</td>
-				   		<td>
-				   			<p>Tar emot en body:</p>
-				   			<p>{<br>
-							    "firstName": string,<br>
-							    "lastName": string,<br>
-							    "age": int,<br>
-							    "gender": char,<br>
-							    "city": string,<br>
-							    "country": string,<br>
-							    "ssN": long<br>
-							}</p>
-				   		</td>
-			    	</tr>
-		    	</table>
-	    	</div>
-    	</div>
-    </body>
+<head>
+<meta charset="utf-8">
+<title>Page title Here</title>
+<link th:href="@{css/style.css}" rel="stylesheet" />
+</head>
+<body>
+	<header>
+
+		<p id="title">MEET THE TEAM</p>
+		<div class="flex-container">
+			<div class="card">
+				<img class="image-info"
+					src="https://thumbs.dreamstime.com/z/boyfriend-girlfriend-working-laptop-20338009.jpg">
+				<p>
+					<b>Alex Raunert</b>
+				</p>
+				<p>
+					<i>The guy w/ a girlfriend</i>
+				</p>
+			</div>
+
+			<div class="card">
+				<img class="image-info"
+					src="https://img3.stockfresh.com/files/a/andreypopov/m/12/10075539_stock-photo-daycare-worker-playing-with-colorful-wooden-toy-blocks.jpg">
+				<p>
+					<b>Frida Ek</b>
+				</p>
+				<p>
+					<i>"Sorry, I have to work"</i>
+				</p>
+			</div>
+
+			<div class="card">
+				<img class="image-info"
+					src="https://i.kym-cdn.com/entries/icons/facebook/000/021/994/Untitled-2.jpg">
+				<p>
+					<b>Nedim Kanat</b>
+				</p>
+				<p>
+					<i>The Hacker</i>
+				</p>
+			</div>
+
+			<div class="card">
+				<img class="image-info"
+					src="https://st2.depositphotos.com/5513760/8076/i/950/depositphotos_80765774-stock-photo-overslept-man-looking-at-blue.jpg">
+				<p>
+					<b>Olle Johansson</b>
+				</p>
+				<p>
+					<i>The Timekeeper</i>
+				</p>
+			</div>
+
+		</div>
+		<p id="links">
+			<a href="https://github.com/ollejj/-MGProjekt"><img
+				id="image-git"
+				src="https://avatars0.githubusercontent.com/u/9919?s=280&v=4">
+			</a>&emsp;<a href="http://gruppett.herokuapp.com/"><img
+				id="image-heroku"
+				src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/04/1461122387heroku-logo.jpg">
+			</a>
+		</p>
+	</header>
+	<p>
+		<b>REST-Kommandon:</b>
+	</p>
+	<div id="cmds">
+		<table class="commands">
+			<tr class="cmd-length">
+				<td class="cmd-size">
+					<p>
+						<b>/createPerson</b>
+					</p>
+				</td>
+				<td class="cmd-size">
+					<p>Tar emot en body:</p>
+					<p>
+						{<br> "firstName": string,<br> "lastName": string,<br>
+						"age": int,<br> "gender": char,<br> "city": string,<br>
+						"country": string,<br> "ssN": long<br> }
+					</p>
+				</td>
+			</tr>
+			<tr class="cmd-length">
+				<td class="cmd-size">
+					<p>
+						<b>/deletePerson/{ssn}</b>
+					</p>
+				</td>
+				<td class="cmd-size">
+					<p>Ersätt {ssn} med ssn-värdet på den personen du vill ta bort</p>
+				</td>
+			</tr>
+			<tr class="cmd-length">
+				<td class="cmd-size">
+					<p>
+						<b>/fetchAll</b>
+					</p>
+				</td>
+				<td class="cmd-size">
+					<p>Hämtar alla rader från Databas</p>
+				</td>
+			</tr>
+			<tr class="cmd-length">
+				<td class="cmd-size">
+					<p>
+						<b>/getPersonBySSN/{ssn}</b>
+					</p>
+				</td>
+				<td class="cmd-size">
+					<p>Ersätt {ssn} med ssn-värdet på den personen du vill visa</p>
+				</td>
+			</tr>
+			<tr class="cmd-length">
+				<td class="cmd-size">
+					<p>
+						<b>/changePerson</b>
+					</p>
+				</td>
+				<td class="cmd-size">
+					<p>Tar emot en body:</p>
+					<p>
+						{<br> "firstName": string,<br> "lastName": string,<br>
+						"age": int,<br> "gender": char,<br> "city": string,<br>
+						"country": string,<br> "ssN": long<br> }
+					</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div id="container">
+		<p>Vi har valt att arbeta både under skoltid i grupp och
+			självständigt övrig tid. Arbetet har flytit på bra, inga konflikter
+			har uppstått och alla har gjort det som har förväntats. Vi har använt
+			oss av Git, vilket var första gången för två av oss i gruppen. Detta
+			var lite utmanande i början men vi kom snabbt in i det. Överlag har
+			projektet inte varit speciellt utmanande, det skulle kunna ha varit
+			mycket mer inveklat. En del av att arbeta i grupp är att delegera
+			arbetet utifrån erfarenhet och kunskapsnivå, vilket fungerat utmärkt
+			i vår grupp men tyvärr saknas komplexitet som skulle kunna finnas där
+			t.ex. Spring Security eller Postgres (eller en annan ordentlig
+			databas). Vi har arbetat agilt och delat upp projektet i olika
+			sprintar och till detta har vi haft Trello som hjälp. I Trellon har
+			vi lagt ut 4 sprintar; grön är sprint ett, gul är sprint två, orange
+			är sprint tre och röd är sprint fyra.</p>
+
+	</div>
+
+
+
+
+
+</body>
 </html>
 
