@@ -22,7 +22,7 @@ a {
 	margin: auto;
 	width: 15vw;
 	margin-left: 2vw;
-	margin-right: 3.5vw;
+	margin-right: 2vw;
 	height: 15vw;
 	padding-top: 1vw;
 	text-align: center;
@@ -63,7 +63,7 @@ a {
 
 }
 
- .flex-container > div, .grid-box {
+.flex-container > div, .grid-box {
 	box-shadow: 0 4px 8px 0 rgba(52, 73, 94,0.5), 0 6px 20px 0
 		rgba(52, 73, 94, 0.3);
 }
@@ -74,9 +74,8 @@ a {
 }
 
 .container {
-	width: 1400px;
+	width: 75vw;
          margin: 0 auto; 
-	height: 100vh;
 	padding-left: 2vw;
 	padding-right: 2vw;
 	background-color: #1e272e;
@@ -88,7 +87,6 @@ a {
 }
 
 #box-create{
-	padding-left: 1vw;
 	grid-area: bc;
 }
 
@@ -105,7 +103,6 @@ a {
 }
 
 #box-change{
-	padding-left: 1vw;
 	grid-area: bch;
 }
 
@@ -116,7 +113,7 @@ a {
 	font-size: .8rem;
 	background-color: #1e272e;
 	padding: 20px;
-	margin-top: 1vw;
+	margin-top: 5vw;
 	margin-left: 4vw;
 	width: 30vw;
 	text-align: justify;
