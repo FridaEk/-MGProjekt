@@ -2,159 +2,135 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
-<title>Page title Here</title>
+<title>Grupp Ett</title>
 <link th:href="@{css/style.css}" rel="stylesheet" />
 </head>
 <body>
-	<header>
 
-		<p id="title">MEET THE TEAM</p>
-		<div class="flex-container">
-			<div class="card">
-				<img class="image-info"
-					src="https://thumbs.dreamstime.com/z/boyfriend-girlfriend-working-laptop-20338009.jpg">
-				<p>
-					<b>Alex Raunert</b>
-				</p>
-				<p>
-					<i>The guy w/ a girlfriend</i>
-				</p>
-			</div>
 
-			<div class="card">
-				<img class="image-info"
-					src="https://img3.stockfresh.com/files/a/andreypopov/m/12/10075539_stock-photo-daycare-worker-playing-with-colorful-wooden-toy-blocks.jpg">
-				<p>
-					<b>Frida Ek</b>
-				</p>
-				<p>
-					<i>"Sorry, I have to work"</i>
-				</p>
-			</div>
-
-			<div class="card">
-				<img class="image-info"
-					src="https://i.kym-cdn.com/entries/icons/facebook/000/021/994/Untitled-2.jpg">
-				<p>
-					<b>Nedim Kanat</b>
-				</p>
-				<p>
-					<i>The Hacker</i>
-				</p>
-			</div>
-
-			<div class="card">
-				<img class="image-info"
-					src="https://st2.depositphotos.com/5513760/8076/i/950/depositphotos_80765774-stock-photo-overslept-man-looking-at-blue.jpg">
-				<p>
-					<b>Olle Johansson</b>
-				</p>
-				<p>
-					<i>The Timekeeper</i>
-				</p>
-			</div>
-
-		</div>
-		<p id="links">
+	<div class="container">
+			<p class="links">
 			<a href="https://github.com/ollejj/-MGProjekt"><img
-				id="image-git"
-				src="https://avatars0.githubusercontent.com/u/9919?s=280&v=4">
+				src="https://avatars0.githubusercontent.com/u/9919?s=280&v=4" width="35" height="35">
 			</a>&emsp;<a href="http://gruppett.herokuapp.com/"><img
-				id="image-heroku"
-				src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/04/1461122387heroku-logo.jpg">
+				src="https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2016/04/1461122387heroku-logo.jpg" width="35" height="35">
 			</a>
 		</p>
-	</header>
-	<p>
-		<b>REST-Kommandon:</b>
-	</p>
-	<div id="cmds">
-		<table class="commands">
-			<tr class="cmd-length">
-				<td class="cmd-size">
-					<p>
-						<b>/createPerson</b>
-					</p>
-				</td>
-				<td class="cmd-size">
-					<p>Tar emot en body:</p>
-					<p>
-						{<br> "firstName": string,<br> "lastName": string,<br>
-						"age": int,<br> "gender": char,<br> "city": string,<br>
-						"country": string,<br> "ssN": long<br> }
-					</p>
-				</td>
-			</tr>
-			<tr class="cmd-length">
-				<td class="cmd-size">
-					<p>
-						<b>/deletePerson/{ssn}</b>
-					</p>
-				</td>
-				<td class="cmd-size">
-					<p>Ersätt {ssn} med ssn-värdet på den personen du vill ta bort</p>
-				</td>
-			</tr>
-			<tr class="cmd-length">
-				<td class="cmd-size">
-					<p>
-						<b>/fetchAll</b>
-					</p>
-				</td>
-				<td class="cmd-size">
-					<p>Hämtar alla rader från Databas</p>
-				</td>
-			</tr>
-			<tr class="cmd-length">
-				<td class="cmd-size">
-					<p>
-						<b>/getPersonBySSN/{ssn}</b>
-					</p>
-				</td>
-				<td class="cmd-size">
-					<p>Ersätt {ssn} med ssn-värdet på den personen du vill visa</p>
-				</td>
-			</tr>
-			<tr class="cmd-length">
-				<td class="cmd-size">
-					<p>
-						<b>/changePerson</b>
-					</p>
-				</td>
-				<td class="cmd-size">
-					<p>Tar emot en body:</p>
-					<p>
-						{<br> "firstName": string,<br> "lastName": string,<br>
-						"age": int,<br> "gender": char,<br> "city": string,<br>
-						"country": string,<br> "ssN": long<br> }
-					</p>
-				</td>
-			</tr>
-		</table>
+		<div id="text-container">
+			<h3></h3>
+			<p>Vi har valt att arbeta både under skoltid i grupp och
+				självständigt övrig tid. Arbetet har fungerat bra, inga konflikter
+				har uppstått och alla har gjort det som har förväntats. Vi har
+				använt oss av Git, vilket var första gången för två av oss i
+				gruppen. Detta var lite utmanande i början men vi kom snabbt in i
+				det. Överlag har projektet inte varit speciellt utmanande, det
+				skulle kunna ha varit mycket mer invecklat t.ex. skulle Spring Security eller Postgres
+				(eller en annan ordentlig databas) integreras. En del av att arbeta i
+				grupp är att delegera arbetet utifrån erfarenhet och kunskapsnivå,
+				vilket har fungerat utmärkt i vår grupp. Vi har arbetat agilt och delat
+				upp projektet i fyra olika sprintar och till detta har vi haft Trello som
+				hjälp där de olika sprintarna är färgkodade. </p>
+
+		</div>
+
+	
+
+		<div class="grid-box">
+
+			<div id="box-create">
+				<h3>
+					<b>/createPerson</b>
+				</h3>
+
+
+				<p>&emsp;Tar emot en body:</p>
+				<p>
+					&emsp;&emsp;{ <br>&emsp;&emsp;&emsp;"firstName": string, <br>&emsp;&emsp;&emsp;"lastName":
+					string, <br>&emsp;&emsp;&emsp;"age": int, <br>&emsp;&emsp;&emsp;"gender": char, <br>&emsp;&emsp;&emsp;"city":
+					string, <br>&emsp;&emsp;&emsp;"country": string, <br>&emsp;&emsp;&emsp;"ssN":
+					long <br> &emsp;&emsp;}
+				</p>
+			</div>
+			<div id="box-delete">
+				<h3>
+					<b>/deletePerson/{ssn}</b>
+				</h3>
+
+				<p>
+					&emsp;Ersätt {ssn} med ssn-värdet på<br> &emsp;den personen du vill ta
+					bort
+				</p>
+			</div>
+			<div id="box-fetch">
+				<h3>
+					<b>/fetchAll</b>
+				</h3>
+
+				<p>&emsp;Hämtar alla rader <br>&emsp;från databas</p>
+			</div>
+			<div id="box-get">
+				<h3>
+					<b>/getPersonBySSN/{ssn}</b>
+				</h3>
+
+				<p>
+					&emsp;Ersätt {ssn} med ssn-värdet <br>&emsp;på den personen du vill visa
+				</p>
+			</div>
+			<div id="box-change">
+				<h3>
+					<b>/changePerson</b>
+				</h3>
+
+				<p>&emsp;Tar emot en body:</p>
+				<p>
+					&emsp;&emsp;{ <br>&emsp;&emsp;&emsp;"firstName": string, <br>&emsp;&emsp;&emsp;"lastName":
+					string, <br>&emsp;&emsp;&emsp;"age": int, <br>&emsp;&emsp;&emsp;"gender": char, <br>&emsp;&emsp;&emsp;"city":
+					string, <br>&emsp;&emsp;&emsp;"country": string, <br>&emsp;&emsp;&emsp;"ssN":
+					long <br> &emsp;&emsp;}
+				</p>
+			</div>
+		</div>
+
+		<div id="right-align">
+		
+			<div class="flex-container">
+				<div>
+					<img class="image-info"
+						src="https://inst.eecs.berkeley.edu/~cs194-26/fa17/upload/files/proj3/cs194-26-aam/1.1/cat.jpg">
+					<p id="name-font">ALEX RAUNERT</p>
+					<p id="title-font">THE GUY WITH A GIRLFRIEND</p>
+				</div>
+
+				<div>
+					<img class="image-info"
+					
+						src="https://media.gettyimages.com/photos/portrait-of-cat-by-dining-table-picture-id923201720?s=612x612">
+					<p id="name-font">FRIDA EK</p>
+					<p id="title-font">"SORRY, I HAVE TO WORK"</p>
+				</div>
+
+				<div>
+					<img class="image-info"
+						src="https://lh3.googleusercontent.com/proxy/TOyjYgKAryNv4THLyIpjNPUKM3Ujcla85PTpmA06IxK6z7TMNddFvni9QomEMVewxVOP1oGbaBkppoJzFqkYowvMZ0ETS1tkw4i6_UAVcGpANR6ZyNbQx4_iZgyaxYkpfw">
+					<p id="name-font">NEDIM KANAT</p>
+					<p id="title-font">THE HACKER</p>
+				</div>
+
+				<div>
+					<img class="image-info"
+						src="https://images.unsplash.com/photo-1482786951817-f26b90cfb79c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80">
+					<p id="name-font">OLLE JOHANSSON</p>
+					<p id="title-font">THE TIMEKEEPER</p>
+				</div>
+
+			</div>
+		</div>
+		
+		
+	
+
 	</div>
-
-	<div id="container">
-		<p>Vi har valt att arbeta både under skoltid i grupp och
-			självständigt övrig tid. Arbetet har flytit på bra, inga konflikter
-			har uppstått och alla har gjort det som har förväntats. Vi har använt
-			oss av Git, vilket var första gången för två av oss i gruppen. Detta
-			var lite utmanande i början men vi kom snabbt in i det. Överlag har
-			projektet inte varit speciellt utmanande, det skulle kunna ha varit
-			mycket mer inveklat. En del av att arbeta i grupp är att delegera
-			arbetet utifrån erfarenhet och kunskapsnivå, vilket fungerat utmärkt
-			i vår grupp men tyvärr saknas komplexitet som skulle kunna finnas där
-			t.ex. Spring Security eller Postgres (eller en annan ordentlig
-			databas). Vi har arbetat agilt och delat upp projektet i olika
-			sprintar och till detta har vi haft Trello som hjälp. I Trellon har
-			vi lagt ut 4 sprintar; grön är sprint ett, gul är sprint två, orange
-			är sprint tre och röd är sprint fyra.</p>
-
-	</div>
-
-
-
-
-
 </body>
 </html>
 
