@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -74,19 +75,12 @@ public class PersonController {
     *   @return a stringifed version of a list containing info on each entity
     */
     @GetMapping("/fetchAll")
-    public String getAll() {
+    public ArrayList<Person> getAll() {
     	ArrayList<Person> allRows = new ArrayList<>();
     	
     	allRows.addAll(personRepo.findAll());
     	
-    	StringBuilder fetchedData = new StringBuilder();
-    	
-    	for (Person p : allRows) {
-    		fetchedData.append(p.toString());
-    		fetchedData.append("\n<br>");
-    	}
-    	
-        return fetchedData.toString();
+        return allRows;
     }
 
     /**
@@ -95,12 +89,12 @@ public class PersonController {
     *   @return a ResponseObject containing a stringified version of the retrieved entity if exists, otherwise an error message.
     */
     @GetMapping("/getPersonBySSN/{ssn}")
-    public String getPersonBySSN(@PathVariable long ssn) {
+    public Person getPersonBySSN(@PathVariable long ssn) {
 
         if(personRepo.existsById(ssn) == true)
-            return personRepo.findById(ssn).toString();
+            return personRepo.findById(ssn);
 
-        return "a person with "+ssn+" doesn't exist.";
+        return null;
     }
 
     /**
