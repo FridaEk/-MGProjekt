@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"team.alex.Grupp1","l":"Grupp1Application"},{"p":"team.alex.Grupp1.controller","l":"IndexController"},{"p":"team.alex.Grupp1.entity","l":"Person"},{"p":"team.alex.Grupp1.controller","l":"PersonController"},{"p":"team.alex.Grupp1.repositories","l":"PersonRepository"},{"p":"team.alex.Grupp1.controller","l":"ResponseObject"}]

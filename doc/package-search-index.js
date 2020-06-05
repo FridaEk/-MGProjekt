@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"team.alex.Grupp1"},{"l":"team.alex.Grupp1.controller"},{"l":"team.alex.Grupp1.entity"},{"l":"team.alex.Grupp1.repositories"}]

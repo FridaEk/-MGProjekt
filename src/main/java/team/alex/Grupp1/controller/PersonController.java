@@ -70,7 +70,7 @@ public class PersonController {
 
 
     /**
-    *   Retrieves all existing entities(Person) and returns them as an ArrayList<Person>
+    *   Retrieves all existing entities(Person) and returns them as an ArrayList&lt;Person&gt;
     *
     *   @return a stringifed version of a list containing info on each entity
     */
@@ -86,6 +86,7 @@ public class PersonController {
     /**
     *   Retrieves a Person entity by given SSN
     *
+    *	@param ssn - social security number
     *   @return a ResponseObject containing a stringified version of the retrieved entity if exists, otherwise an error message.
     */
     @GetMapping("/getPersonBySSN/{ssn}")

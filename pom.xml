@@ -60,6 +60,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+                	<additionalOptions>-html5</additionalOptions>
+            	</configuration>
 			</plugin>
 		</plugins>
 	</build>
